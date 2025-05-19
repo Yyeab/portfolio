@@ -1,18 +1,45 @@
 const tonicSection = document.querySelector('.tonic');
-const modal = document.getElementById('project-modal');
-const closeBtn = document.getElementById('modal-close');
+const multipostSection = document.querySelector('.multi-post');
+const facebookSection = document.querySelector('.facebook');
+const ubernavSection = document.querySelector('.uber-nav');
+const tonic_modal = document.getElementById('tonic-modal');
+const multipost_modal = document.getElementById('multipost-modal');
+const facebook_modal = document.getElementById('facebook-modal');
+const ubernav_modal = document.getElementById('ubernav-modal');
+const closeButtons = document.querySelectorAll('.modal-close');
 
 tonicSection.addEventListener('click', () => {
-    modal.style.display = 'flex';
+    tonic_modal.style.display = 'flex';
 });
 
-closeBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
+multipostSection.addEventListener('click', () => {
+    multipost_modal.style.display = 'flex';
 });
+
+facebookSection.addEventListener('click', () => {
+    facebook_modal.style.display = 'flex';
+});
+
+ubernavSection.addEventListener('click', () => {
+    ubernav_modal.style.display = 'flex';
+});
+
+closeButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const modal = btn.closest('.modal-overlay');
+      if (modal) modal.style.display = 'none';
+    });
+  });
 
 
 window.addEventListener('click', (e) => {
-    if (e.target === modal) {
-        modal.style.display = 'none';
+    if (e.target === tonic_modal) {
+        tonic_modal.style.display = 'none';
+    } else if (e.target === multipost_modal) {
+        multipost_modal.style.display = 'none';
+    } else if (e.target === facebook_modal) {
+        facebook_modal.style.display = 'none';
+    } else if (e.target === ubernav_modal) {
+        ubernav_modal.style.display = 'none';
     }
 });
