@@ -8,20 +8,28 @@ const facebook_modal = document.getElementById('facebook-modal');
 const ubernav_modal = document.getElementById('ubernav-modal');
 const closeButtons = document.querySelectorAll('.modal-close');
 
-tonicSection.addEventListener('click', () => {
-    tonic_modal.style.display = 'flex';
+tonicSection.addEventListener('click', (e) => {
+    if (!e.target.classList.contains('see-project')) {
+        tonic_modal.style.display = 'flex';
+    }
 });
 
-multipostSection.addEventListener('click', () => {
-    multipost_modal.style.display = 'flex';
+multipostSection.addEventListener('click', (e) => {
+    if (!e.target.classList.contains('see-project')) {
+        multipost_modal.style.display = 'flex';
+    }
 });
 
-facebookSection.addEventListener('click', () => {
-    facebook_modal.style.display = 'flex';
+facebookSection.addEventListener('click', (e) => {
+    if (!e.target.classList.contains('see-project')) {
+        facebook_modal.style.display = 'flex';
+    }
 });
 
-ubernavSection.addEventListener('click', () => {
-    ubernav_modal.style.display = 'flex';
+ubernavSection.addEventListener('click', (e) => {
+    if (!e.target.classList.contains('see-project')) {
+        ubernav_modal.style.display = 'flex';
+    }
 });
 
 closeButtons.forEach((btn) => {
