@@ -445,8 +445,19 @@ p {
 }
 
 .skill-icons {
-    display: flex;
+    display: none;
     gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+}
+
+.skill-box.active .skill-icons {
+    display: flex;
+  }
+  
+
+.skill-icons {
+    transition: all 0.3s ease;
 }
 
 .skill {

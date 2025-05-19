@@ -43,3 +43,11 @@ window.addEventListener('click', (e) => {
         ubernav_modal.style.display = 'none';
     }
 });
+
+document.querySelectorAll('.skill-box').forEach(box => {
+    box.querySelector('h3').addEventListener('click', () => {
+        box.classList.toggle('active');
+    const indicator = box.querySelector('.dropdown-indicator');
+        indicator.textContent = box.classList.contains('active') ? '▲' : '▼';
+    });
+  });
